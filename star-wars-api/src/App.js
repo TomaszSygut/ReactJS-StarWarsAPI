@@ -9,7 +9,6 @@ import Planets from './components/Planets'
 function App() {
   const [people, setPeople] = useState([]);
   const [planets, setPlanets] = useState([]);
-  const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
@@ -21,14 +20,6 @@ function App() {
       setPeople(data.results)
       setLoading(false)
     }
-    async function fetchFilms() {
-      let res = await fetch('https://swapi.dev/api/films/')
-      let data = await res.json();
-      setFilms(data.results)
-      setLoading(false)
-    }
-
-
     async function fetchPlanets() {
       let res = await fetch('https://swapi.dev/api/planets/')
       let data = await res.json();
@@ -54,7 +45,7 @@ function App() {
           </Dimmer>) : (
               <Switch>
                 <Route exact path='/'>
-                  <Home data={films} />
+                  <Home />
                 </Route>
                 <Route exact path='/people'>
                   <People data={people} />
