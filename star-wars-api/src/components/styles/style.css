@@ -1,0 +1,16 @@
+.starwars_header {
+
+    text-align: center;
+}
+
+.description {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px 20px;
+
+}
+
+h1 {
+    font-size: 64px;
+    text-align: center;
+}

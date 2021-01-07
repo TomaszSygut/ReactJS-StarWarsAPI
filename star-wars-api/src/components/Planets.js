@@ -10,13 +10,13 @@ function Planets({ data }) {
                         <Grid.Column key={i}>
                             <Card>
                                 <Card.Content>
-                                    <Card.Header>{planets.name}</Card.Header>
+                                    <Card.Header className="starwars_header">{planets.name}</Card.Header>
                                 </Card.Content>
                                 <CardDescription>
                                     <strong>Rotation Peroid</strong>
-                                    <p>{planets.rotation_peroid}</p>
+                                    <p>{planets.rotation_period}</p>
                                     <strong>Orbital Peroid</strong>
-                                    <p>{planets.orbital_peroid}</p>
+                                    <p>{planets.orbital_period}</p>
                                     <strong>Diameter</strong>
                                     <p>{planets.diameter}</p>
                                     <strong>Climate</strong>

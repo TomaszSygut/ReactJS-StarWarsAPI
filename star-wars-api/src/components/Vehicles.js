@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, CardDescription, Grid } from 'semantic-ui-react';
+
 function Vehicles({ data }) {
     return (
         <>
@@ -10,7 +11,7 @@ function Vehicles({ data }) {
                         <Grid.Column key={i}>
                             <Card>
                                 <Card.Content>
-                                    <Card.Header>{vehicles.name}</Card.Header>
+                                    <Card.Header className="starwars_header">{vehicles.name}</Card.Header>
                                 </Card.Content>
                                 <CardDescription>
                                     <strong>Model</strong>

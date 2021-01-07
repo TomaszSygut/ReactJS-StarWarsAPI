@@ -7,10 +7,13 @@ import Home from './components/Home'
 import People from './components/People'
 import Planets from './components/Planets'
 import Vehicles from './components/Vehicles'
+import Species from './components/Species'
+
 function App() {
   const [people, setPeople] = useState([]);
   const [planets, setPlanets] = useState([]);
   const [vehicles, setVehicles] = useState([]);
+  const [species, setSpecies] = useState([]);
   const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
@@ -20,6 +23,12 @@ function App() {
       let res = await fetch('https://swapi.dev/api/vehicles/')
       let data = await res.json();
       setVehicles(data.results)
+      setLoading(false)
+    }
+    async function fetchSpecies() {
+      let res = await fetch('https://swapi.dev/api/species/')
+      let data = await res.json();
+      setSpecies(data.results)
       setLoading(false)
     }
     async function fetchPeople() {
@@ -37,6 +46,7 @@ function App() {
     fetchPeople();
     fetchPlanets();
     fetchVehicles();
+    fetchSpecies();
 
   }, []);
   // console.log("data", people);
@@ -63,6 +73,9 @@ function App() {
                 </Route>
                 <Route exact path='/vehicles'>
                   <Vehicles data={vehicles} />
+                </Route>
+                <Route exact path='/species'>
+                  <Species data={species} />
                 </Route>
               </Switch>
             )}

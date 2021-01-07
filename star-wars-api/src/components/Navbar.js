@@ -17,6 +17,9 @@ function Navbar() {
                 <Link to='/vehicles'>
                     <Menu.Item name="vehicles" />
                 </Link>
+                <Link to='/species'>
+                    <Menu.Item name="species" />
+                </Link>
 
 
             </Container>
